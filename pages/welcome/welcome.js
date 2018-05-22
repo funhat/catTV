@@ -1,4 +1,5 @@
 // pages/welcome/welcome.js
+let app = getApp();
 Page({
 
     /**
@@ -6,13 +7,19 @@ Page({
      */
     data: {
         remind: "加载中",
+        angle: 10,
+        userInfo: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        app.getUserInfo((userInfo) => {
+            this.setData({
+                userInfo
+            })
+        })
     },
 
     /**
@@ -23,7 +30,27 @@ Page({
             this.setData({
                 remind: "",
             })
-        }, 3000)
+        }, 300);
+        setInterval(() => {
+                let angle = this.data.angle + 10;
+                this.setData({
+                    angle: angle
+                });
+                console.log(this.data.angle);
+            }, 50)
+            // wx.onAccelerometerChange((res) => {
+            //     let angle = (res.x * 300).toFixed(1);
+            //     this.setData({
+            //         angle: angle
+            //     });
+            //     // if (angle > 14) { angle = -30; } else if (angle < -14) { angle = -14; }
+            //     // if (this.data.angle !== angle) {
+            //     //     this.setData({
+            //     //         angle: angle
+            //     //     });
+            //     // }
+
+        // });
     },
 
     /**

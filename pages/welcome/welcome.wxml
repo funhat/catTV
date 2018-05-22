@@ -5,7 +5,7 @@
     </view>
     <block wx:else>
         <image class="title" src="../../assets/images/more/title8.png"></image>
-        <view class="content">
+        <view class="content">{{angle}}
             <view class="hd" style="transform:rotateZ({{angle}}deg)"></view>
         </view>
     </block>
