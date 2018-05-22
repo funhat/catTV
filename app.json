@@ -1,12 +1,37 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "pages/welcome/welcome",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/music/music"
+    ],
+    "tabBar": {
+        "borderStyle": "dark",
+        "position": "bottom",
+        "list": [{
+                "pagePath": "pages/music/music",
+                "text": "音乐",
+                "iconPath": "./assets/images/tab/music1.png",
+                "selectedIconPath": "./assets/images/tab/music.png"
+            },
+            {
+                "pagePath": "pages/music/music",
+                "text": "视频",
+                "iconPath": "./assets/images/tab/video1.png",
+                "selectedIconPath": "./assets/images/tab/video.png"
+            },
+            {
+                "pagePath": "pages/music/music",
+                "text": "影评",
+                "iconPath": "./assets/images/tab/review1.png",
+                "selectedIconPath": "./assets/images/tab/review.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffff00",
+        "navigationBarTitleText": "大猫TV",
+        "navigationBarTextStyle": "black"
+    }
 }

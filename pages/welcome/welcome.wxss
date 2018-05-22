@@ -1,0 +1,131 @@
+/* pages/welcome/welcome.wxss */
+
+page {
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 10pt;
+    line-height: 150%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+/*
+技巧：
+微信小程序实现全屏
+第一种方式：
+设置  flex: 1;
+
+第二种方式：
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+*/
+
+.container {
+    height: 100%;
+    background: #b2ff1a;
+    flex: 1;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 5px solid white;
+    /* position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex; */
+}
+
+.remind-box {
+    background: b2ff1a;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 300rpx;
+}
+
+.remind-img {
+    width: 250rpx;
+    height: 250rpx;
+    padding-bottom: 25rpx;
+    /* border: 10px solid white; */
+}
+
+.title,
+.smalltitle {
+    position: absolute;
+    top: 30rpx;
+    left: 50%;
+    width: 600rpx;
+    height: 200rpx;
+    margin-left: -300rpx;
+    opacity: 1;
+    border: 5px solid red;
+    animation: show 2.5s cubic-bezier(0.19, 1, 0.22, 1) 0.5s forwards;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: .95;
+    }
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 450rpx;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(244, 244, 244, 0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    animation: rise 3s cubic-bezier(0.19, 1, 0.22, 1) .25s forwards;
+}
+
+@keyframes rise {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 100%);
+    }
+    50% {
+        opacity: 1;
+        transform: skew(45deg, 45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 450rpx, 50rpx);
+    }
+}
+
+.hd {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1000rpx;
+    margin-left: -500rpx;
+    height: 200rpx;
+    transition: all .35s ease;
+    background-color: red;
+}
