@@ -10,6 +10,10 @@ App({
         wx.login({
                 success: res => {
                     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4cda07cd715ca2a99b1b2c508b213fb9726ddfd
                 }
             })
             // 获取用户信息
@@ -33,6 +37,7 @@ App({
             }
         })
     },
+<<<<<<< HEAD
     globalData: {
         userInfo: null,
         g_isPlayingMusic: false,
@@ -41,5 +46,26 @@ App({
         musicBase: "https://api.huxiaowen.vip",
         QQMusicBase: "https://c.y.qq.com",
         doubanBase: "https://douban.uieee.com"
+=======
+    getUserInfo(cb) {
+        if (this.globalData.userInfo) {
+            typeof cb == "function" && cb(this.globalData.userInfo)
+        } else {
+            //调用登陆接口
+            wx.login({
+                success: () => {
+                    wx.getUserInfo({
+                        success: (res) => {
+                            this.globalData.userInfo = res.userInfo
+                            typeof cb == "function" && cb(this.globalData.userInfo)
+                        }
+                    })
+                }
+            })
+        }
+    },
+    globalData: {
+        userInfo: null,
+>>>>>>> f4cda07cd715ca2a99b1b2c508b213fb9726ddfd
     }
 })
